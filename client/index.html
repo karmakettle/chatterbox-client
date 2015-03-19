@@ -10,12 +10,20 @@
     <script src="bower_components/underscore/underscore-min.js"></script>
     <!-- your scripts -->
     <script src="env/config.js"></script>
-    <script src="scripts/app.js"></script>
   </head>
   <body>
     <div id="main">
       <h1>chatterbox</h1>
-      <!-- Your HTML goes here! -->
+      <select id="roomSelect">
+        <option selected disabled>Rooms</option>
+        <option>Create New Room...</option>
+      </select>
+      <form>
+        <input type="text" class="text">
+        <input type="submit" class="submit">
+      </form>
+      <div id="chats"></div>
     </div>
+    <script src="scripts/app.js"></script>
   </body>
 </html>
