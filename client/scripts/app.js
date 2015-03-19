@@ -8,7 +8,7 @@ window.app = {
     $('#main').on('click', '.username', function(){
       // console.log("I've been clicked!")
       app.addFriend($(this).text());
-      console.log(app.friends);
+      // console.log(app.friends);
     })
 
     // $('.submit').click(function() {
@@ -48,7 +48,7 @@ window.app = {
   clearMessages: function(){
     //clear messages from the DOM
     $('#chats').empty();
-    console.log($('#chats').children());
+    // console.log($('#chats').children());
   },
   addRoom: function(roomname){
     $('#roomSelect').append('<option>' + roomname + '</option>');
@@ -57,32 +57,29 @@ window.app = {
     // $.get(function(data){
     //   console.log(data);
     // }) 
-    $.ajax({
-      url: 'https://api.parse.com/1/classes/chatterbox',
-      type: 'POST',
+
+    $.ajax('https://api.parse.com/1/classes/chatterbox', {
+      // url: this.url,
+      type: 'GET',
       // data: JSON.stringify(message),
       contentType: 'application/json',
       success: function (data) {
-        console.log('chatterbox: Message sent');
+        console.log('chatterbox: Messages received');
       },
       error: function (data) {   // See: https://developer.mozilla.org/en-US/docs/Web/API/console.error
-        console.error('chatterbox: Failed to send message');
+        console.error('chatterbox: Failed to retrieve messages');
       }
     })
-  },
-  
-  friends: {},
 
+  },
+  friends: {},
   addFriend: function(username) {
     // alert('hi')
     app.friends[username] = true;
-  }
-}
+  },
+  server: 'https://api.parse.com/1/classes/chatterbox'
+};
 
-
-//create a friends array/object
-//
- 
 })();
 
 
