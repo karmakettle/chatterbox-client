@@ -16,7 +16,7 @@ window.app = {
 
     $('#main').on('click', '.submit', function() {
       console.log('click handler activated!')
-      app.submitHandler()
+      app.handleSubmit()
     })
 
     $('#roomSelect').on('change', function() {
@@ -93,7 +93,7 @@ window.app = {
   addFriend: function(username) {
     app.friends[username] = true;
   },
-  submitHandler: function() {
+  handleSubmit: function() {
     var message = {
       text: $('.text').val(),
       username: decodeURI(window.location.search.slice(10)),

@@ -1,8 +1,13 @@
 body {
-    background: #eee;
+    background: #eee url('winterCat.jpg') no-repeat center center fixed;
+    background-size: cover;
     text-align: center;
     padding: 0 25px;
     font-family: arial, sans-serif;
+}
+
+h1 {
+    font-family: 'Satisfy', cursive;
 }
 
 #main {
@@ -82,3 +87,23 @@ form input[type=text] {
 .spinner img {
     padding: 10px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
